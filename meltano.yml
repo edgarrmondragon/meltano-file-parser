@@ -1,0 +1,22 @@
+version: 1
+project_id: c337e779-f21c-4d8f-b69a-da75ec32e4bb
+plugins:
+  extractors:
+  - name: tap-github
+    pip_url: git+https://github.com/MeltanoLabs/tap-github.git
+    namespace: tap_github
+    settings:
+    - name: repo
+      # kind": string
+    - name: token
+      kind: password
+      value: s3cr3t
+    - name: some_number
+      kind: integer
+      value: 10
+    - name: start_date
+      kind: date_iso8601
+      value: 2021-01-01
+    commands:
+      info:
+        args: --test
